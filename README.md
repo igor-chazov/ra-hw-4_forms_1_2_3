@@ -2,7 +2,7 @@
 
 # 4. Домашнее задание к лекции «Формы»
 
-[[GithubPages](https://igor-chazov.github.io/ra-hw-4_forms_1_2_3)]
+[![Build status](https://ci.appveyor.com/api/projects/status/r23d61emk74fkw3w?svg=true)](https://ci.appveyor.com/project/igor-chazov/ra-hw-4-forms-1-2-3) [[GithubPages](https://igor-chazov.github.io/ra-hw-4_forms_1_2_3)]
 
 ---
 
