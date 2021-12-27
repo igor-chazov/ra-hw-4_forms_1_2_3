@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+<a name="top"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 4. Домашнее задание к лекции «Формы»
 
-## Available Scripts
+[[GithubPages](https://igor-chazov.github.io/ra-hw-4_forms_1_2_3)]
 
-In the project directory, you can run:
+---
 
-### `npm start`
+**Перейти к:**  
+***[4.2 Учёт тренировок](#4.2)  
+[4.3 Менеджер фото](#4.3)***
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 4.1 Конвертер цветов из HEX в RGB
 
-### `npm test`
+Вам необходимо разработать конвертер цветов из HEX в RGB.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Конвертер цветов](./assets/preview.png)
 
-### `npm run build`
+## Интерфейс конвертера
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+При правильном вводе цвета он показывает его представление в формате RGB и меняет цвет фона на заданный цвет:
+![Цвет](./assets/color.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Конвертер при вводе неправильного цвета в формате HEX должен сообщать об ошибке:
+![Ошибка](./assets/error.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Необходимо дожидаться ввода всех 7-ми символов (включая решётку), чтобы принимать решение о том, показывать ошибку или менять цвет фона.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## <a name="4.2">4.2 Учёт тренировок</a>
+***[(наверх)](#top)***
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Вы решили реализовать небольшое приложение, которое хранит данные о тренировках (прогулках), которые вы совершаете в течение недели.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Общий интерфейс должен выглядеть следующим образом:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![Steps](./assets/steps.png)
 
-## Learn More
+## Добавление данных
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+У вас должна быть форма ввода в которую вводится дата и количество пройденных километров. Добавленные значения добавляются в таблицу при отправке формы.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+_Особенности добавления_:
+1. Новые значения добавляются не в конец, а согласно сортировке по дате, т.е. если мы добавим 21.07.2019, то значение встанет на первую позицию (согласно скриншоту), а если 17.07.2019 - то на последнюю
+2. Если мы добавляем значения, указывая уже существующую дату, то значения суммируются с теми, что хранятся в таблице, например, если добавить 20.07.2019 и 10км, то для даты 20.07.2019 будет отображаться 15.7км
 
-### Code Splitting
+## Удаление данных
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+С помощью иконки ✘ должна быть возможность удалить строку. Удаляется вся строка целиком и данные, связанные с ней.
 
-### Analyzing the Bundle Size
+## Редактирование данных
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Дополнительное (не обязательное) задание: вы можете реализовать кнопку редактирования ✎ - при нажатии на которую происходит перенос данных в форму ввода с последующим сохранением (при нажатии кнопки Ok).
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## <a name="4.3">4.3 Менеджер фото</a>
+***[(наверх)](#top)***
 
-### Advanced Configuration
+Вы решили модернизировать один из старых проектов и переписать его в виде React-компонентов:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+![Менеджер фото](./assets/image.png)
 
-### Deployment
+## Интерфейс Менеджера фото
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+При клике на области "Click to select" должно появляться стандартное окно выбора файлов операционной системы, в котором пользователь может выбрать один или несколько файлов изображений (image/*).
 
-### `npm run build` fails to minify
+После выбора файлов они автоматически загружаются и отображаются в виде preview фиксированного размера (нижний блок). Для отображения используйте DataURL. Новый файлы должны добавляться (не заменять предыдущие).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+При клике на крестик, изображение (и все связанные с ним данные) должны удаляться.
+
+Важно: Drag & Drop реализовывать не нужно.
+
+## Подсказки
+
+1. Разместите с помощью CSS блок "Click to select" над `<input type="file" />` и установите этому блоку `pointer-events: none;`, чтобы вызывать окошко выбора файлов при клике.
+1. Используйте следующую заготовку, для получения DataUrl:
+```js
+const fileToDataUrl = file => {
+  return new Promise((resolve, reject) => {
+    const fileReader = new FileReader();
+  
+    fileReader.addEventListener('load', evt => {
+      resolve(evt.currentTarget.result);
+    });
+    
+    fileReader.addEventListener('error', evt => {
+      reject(new Error(evt.currentTarget.error));
+    });
+    
+    fileReader.readAsDataURL(file);
+  });
+}
+
+const handleSelect = async (evt) => {
+    const files = [...evt.target.files];
+    const urls = await Promise.all(files.map(o => fileToDataUrl(o)));
+    // У вас в массиве - dataUrl, можете использовать в качестве значения атрибута src тега img
+}
+```
+
+---
+
+

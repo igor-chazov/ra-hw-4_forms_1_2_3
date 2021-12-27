@@ -1,0 +1,124 @@
+.photo > *:first-child {
+  margin-bottom: 1rem;
+}
+
+.photo-drop-area {
+  position: relative;
+  height: 100px;
+  border: 2px solid gray;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.photo-drop-area__item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.photo-drop-area__input {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.photo-drop-area__text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.photo-gallery__item {
+  position: relative;
+  width: calc(25% - 0.4rem);
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: whitesmoke;
+  border: 1px solid grey;
+  border-radius: 8px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.photo-gallery__img {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 0.3rem;
+  border-radius: 5px;
+}
+
+.photo-gallery__img-title {
+  text-align: center;
+  font-size: 0.7rem;
+  word-wrap: break-word;
+}
+
+.photo-gallery__btn-remove {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 27px;
+  height: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid grey;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transition: box-shadow 0.3s;
+}
+
+.photo-gallery__btn-remove:hover {
+  box-shadow: 0 0 5px 0 grey;
+}
+
+.photo-gallery__btn-remove::after {
+  content: "\2718";
+  font-size: 16px;
+  line-height: 100%;
+  color: red;
+}
+
+@media (min-width: 992px) {
+  .photo-gallery__item:nth-child(4n) {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .photo-gallery__item {
+    width: calc(33.33% - 0.4rem);
+  }
+
+  .photo-gallery__item:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .photo-gallery__item {
+    width: calc(50% - 0.4rem);
+  }
+
+  .photo-gallery__item:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 479px) {
+  .photo-gallery {
+    display: block;
+  }
+
+  .photo-gallery__item {
+    margin-right: 0;
+  }
+}

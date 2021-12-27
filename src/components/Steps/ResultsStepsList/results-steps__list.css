@@ -1,0 +1,49 @@
+.results-steps__header {
+  margin-bottom: 0.5rem;
+}
+
+.results-steps__list {
+  padding: 0.5rem 0.3rem;
+  border: 1px solid black;
+  border-radius: 8px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.results-steps__list li:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.results-steps__actions {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.results-steps__btn {
+  flex: 0 0 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid grey;
+  border-radius: 50%;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transition: box-shadow 0.3s;
+}
+
+.results-steps__btn:hover {
+  box-shadow: 0 0 5px 0 grey;
+}
+
+.results-steps__btn::after {
+  line-height: 100%;
+}
+
+.results-steps__btn-edit::after {
+  content: "\270E";
+  color: green;
+}
+
+.results-steps__btn-remove::after {
+  content: "\2718";
+  color: #ff0000;
+}

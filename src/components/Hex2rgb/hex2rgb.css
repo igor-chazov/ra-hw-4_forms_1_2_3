@@ -1,0 +1,60 @@
+.hex2rgb {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.hex2rgb__body {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #c2c2c2;
+}
+
+.hex2rgb__content {
+  width: 180px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.hex2rgb__content > *:first-child {
+  margin-bottom: 0.5rem;
+}
+
+.hex2rgb__input-wrap {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.hex2rgb__input {
+  padding: 0 1rem;
+  font-weight: bold;
+  line-height: inherit;
+  letter-spacing: 1.5px;
+  text-align: inherit;
+  outline: none;
+}
+
+.hex2rgb__result {
+  position: relative;
+  z-index: 2;
+  font-size: 0.9rem;
+  color: white;
+}
+
+.hex2rgb__result-wrap {
+  position: relative;
+  height: 50px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.hex2rgb__result-wrap::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,33 @@
+.steps {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.steps > *:first-child {
+  margin-bottom: 1rem;
+}
+
+.steps-columns {
+  display: flex;
+  align-items: center;
+  margin: 0 -0.5rem;
+  text-align: center;
+}
+
+.steps-columns > div {
+  padding: 0 0.5rem;
+}
+
+.steps-columns_bottom {
+  align-items: flex-end;
+}
+
+.steps-columns__column-1,
+.steps-columns__column-2 {
+  flex: 1 1 40%;
+}
+
+.steps-columns__column-3 {
+  flex: 1 1 20%;
+}
